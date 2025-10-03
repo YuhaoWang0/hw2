@@ -1,3 +1,7 @@
+//
+// Created by Baron Wang on 9/21/25.
+//
+
 #ifndef UTIL_H
 #define UTIL_H
 
@@ -5,7 +9,7 @@
 #include <iostream>
 #include <set>
 
-
+using namespace std;
 /** Complete the setIntersection and setUnion functions below
  *  in this header file (since they are templates).
  *  Both functions should run in time O(n*log(n)) and not O(n^2)
@@ -13,20 +17,34 @@
 template <typename T>
 std::set<T> setIntersection(std::set<T>& s1, std::set<T>& s2)
 {
+    set<T> result;
 
+    for (typename set<T>::iterator it = s1.begin(); it != s1.end(); it ++) {
+        T current = *it;
+        if (s2.find(current) != s2.end()) {
+            result.insert(current);
+        }
+    }
 
-
-
-
+    return result;
 }
 template <typename T>
 std::set<T> setUnion(std::set<T>& s1, std::set<T>& s2)
 {
+    set<T> result;
 
+    for (typename set<T>::iterator it = s1.begin(); it != s1.end(); it ++) {
+        result.insert(*it);
+        T current = *it;
+    }
 
+    // by definition, set keys are unique, so it will automatically Deduplicate the same keys
+    for (typename set<T>::iterator it = s2.begin(); it != s2.end(); it ++) {
+        result.insert(*it);
+        T current = *it;
+    }
 
-
-
+    return result;
 }
 
 /***********************************************/

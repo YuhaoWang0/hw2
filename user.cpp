@@ -1,3 +1,7 @@
+//
+// Created by Baron Wang on 9/21/25.
+//
+
 #include "user.h"
 using namespace std;
 
@@ -36,3 +40,4 @@ void User::dump(std::ostream& os)
 {
     os << name_ << " "  << balance_ << " " << type_ << endl;
 }
+

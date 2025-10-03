@@ -1,3 +1,7 @@
+//
+// Created by Baron Wang on 9/21/25.
+//
+
 #include <iostream>
 #include <sstream>
 #include "product_parser.h"
@@ -10,6 +14,7 @@ using namespace std;
 
 ProductParser::ProductParser()
 {
+
 
 }
 
@@ -130,8 +135,9 @@ std::string ProductBookParser::categoryID()
  */
 Product* ProductBookParser::makeProduct()
 {
+    Product* bookProduct = new Book(prodName_, price_, qty_, isbn_, author_);
 
-
+    return bookProduct;
 }
 
 
@@ -185,9 +191,9 @@ std::string ProductClothingParser::categoryID()
  */
 Product* ProductClothingParser::makeProduct()
 {
+    Product* clothingProduct = new Clothing(prodName_, price_, qty_, size_, brand_);
 
-
-
+    return clothingProduct;
 }
 
 
@@ -245,6 +251,7 @@ std::string ProductMovieParser::categoryID()
  */
 Product* ProductMovieParser::makeProduct()
 {
+    Product* movieProduct = new Movie(prodName_, price_, qty_, genre_, rating_);
 
-
+    return movieProduct;
 }
